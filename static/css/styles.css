@@ -70,6 +70,7 @@ img {
   justify-content: space-between;
   width: 50%;
   position: relative;
+  z-index: 1;
 }
 .nav-el-1 li {
   padding: 2rem;
@@ -177,4 +178,18 @@ footer {
 }
 .feature-content {
   padding: 2rem;
+}
+/* about */
+.about h2 {
+  text-align: center;
+  margin: 5rem;
+}
+.about p {
+  margin-bottom: 2rem;
+}
+.about h3 {
+  margin: 2rem 0;
+}
+.about li {
+  margin: 1rem 0.5rem;
 }
