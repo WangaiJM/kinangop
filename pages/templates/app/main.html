@@ -1,67 +1,70 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KTVC | {% block title %} Home {% endblock %}</title>
+    <title>Kinangop TVC | {% block title %} Home {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
     <header>
       {% include 'includes/portal-nav.html' %}
 
       <nav class="main-nav">
-        <div class="container">
-          <h1><a href="">Kinangop TVC</a></h1>
-          <ul>
-            <li>
-              <a href="">About</a>
-              <ul>
-                <li><a href="">Brief History</a></li>
-                <li><a href="">Vision and Mission</a></li>
-                <li><a href="">Service Charter</a></li>
-                <li><a href="">Board Of Governors</a></li>
-                <li><a href="">Principal</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">Admission</a>
-              <ul>
-                <li><a href="">Application Procedure</a></li>
-                <li><a href="">Academic Programmes</a></li>
-                <li><a href="">Fee Structure</a></li>
-                <li><a href="">Other Downloads</a></li>
-                <li><a href="">Online Registration</a></li>
-                <li><a href="">Download Registration Form</a></li>
-                <li><a href="">Contact Us</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">Students</a>
-              <ul>
-                <li><a href="">Student Welfare</a></li>
-                <li><a href="">Downloads</a></li>
-                <li><a href="">Dean of Students</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="">Opportunities</a>
-              <ul>
-                <li><a href="">Careers</a></li>
-                <li><a href="">Tenders</a></li>
-                <li><a href="">Internship</a></li>
-              </ul>
-            </li>
-            <li><a href="">Contacts</a></li>
-          </ul>
+          <div class="main-nav-items">
+            <h1><a href="">Kinangop TVC</a></h1>
+            <ul class="nav-el-1">
+              <li>
+                <a href="">About</a>
+                <ul class="nav-el-2">
+                  <li><a href="">Brief History</a></li>
+                  <li><a href="">Vision and Mission</a></li>
+                  <li><a href="">Service Charter</a></li>
+                  <li><a href="">Board Of Governors</a></li>
+                  <li><a href="">Principal</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Admission</a>
+                <ul class="nav-el-2">
+                  <li><a href="">Application Procedure</a></li>
+                  <li><a href="">Academic Programmes</a></li>
+                  <li><a href="">Fee Structure</a></li>
+                  <li><a href="">Other Downloads</a></li>
+                  <li><a href="">Online Registration</a></li>
+                  <li><a href="">Download Registration Form</a></li>
+                  <li><a href="">Contact Us</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Students</a>
+                <ul class="nav-el-2">
+                  <li><a href="">Student Welfare</a></li>
+                  <li><a href="">Downloads</a></li>
+                  <li><a href="">Dean of Students</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Opportunities</a>
+                <ul class="nav-el-2">
+                  <li><a href="">Careers</a></li>
+                  <li><a href="">Tenders</a></li>
+                  <li><a href="">Internship</a></li>
+                </ul>
+              </li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+          </div>
         </div>
-      </nav>
     </header>
 
     {% block content %} {% endblock %}
 
     <footer>
-      <p>Copyright {% now | "Y" %}</p>
+      <p id="copy">Copyright &copy; {% now "Y" %}</p>
     </footer>
   </body>
 </html>
