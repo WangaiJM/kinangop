@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
 *,
 *::after,
 *::before {
@@ -7,9 +9,11 @@
 }
 html {
   font-size: 62.5%;
+  font-family: "Open sans", sans-serif;
 }
 body {
   font-size: 1.6rem;
+  min-height: 100vh;
 }
 ul {
   list-style: none;
@@ -24,9 +28,20 @@ p {
   max-width: 80%;
   margin: auto;
 }
-img {
+img,
+picture,
+svg,
+video {
   max-width: 100%;
+  display: block;
 }
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
 .btn {
   padding: 1.6rem;
   border: 2px solid rgb(119, 216, 119);
@@ -93,6 +108,27 @@ img {
 }
 .nav-el-1 li:hover .nav-el-2 {
   display: list-item;
+}
+/* title bar */
+.title-bar {
+  margin-top: 4rem;
+  padding: 3rem;
+  background-color: rgb(27, 27, 145);
+  border-radius: 0.5rem;
+  color: #fff;
+}
+.title-bar h2 {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.title-bar a {
+  color: #fff;
+  padding: 1rem;
+  background-color: rgb(41, 44, 223);
+  margin: 1rem 0;
+  text-decoration: underline;
+  display: block;
 }
 /* footer */
 footer {
@@ -192,4 +228,10 @@ footer {
 }
 .about li {
   margin: 1rem 0.5rem;
+}
+.content {
+  padding: 5rem 0;
+}
+.content p {
+  margin-bottom: 2rem;
 }

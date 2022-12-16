@@ -28,22 +28,22 @@
                 </ul>
               </li>
               <li>
-                <a href="">Admission</a>
+                <a href="{% url 'procedures' %}">Admission</a>
                 <ul class="nav-el-2">
-                  <li><a href="">Application Procedure</a></li>
-                  <li><a href="">Academic Programmes</a></li>
-                  <li><a href="">Fee Structure</a></li>
+                  <li><a href="{% url 'procedures' %}">Application Procedure</a></li>
+                  <li><a href="{% url 'programs' %}">Academic Programmes</a></li>
+                  <!-- <li><a href="">Fee Structure</a></li> -->
                   <li><a href="">Other Downloads</a></li>
-                  <li><a href="">Online Registration</a></li>
-                  <li><a href="">Download Registration Form</a></li>
-                  <li><a href="">Contact Us</a></li>
+                  <li><a href="{% url 'online-registration' %}">Online Registration</a></li>
+                  <!-- <li><a href="">Download Registration Form</a></li> -->
+                  <li><a href="{% url 'contacts' %}">Contact Us</a></li>
                 </ul>
               </li>
               <li>
                 <a href="">Students</a>
                 <ul class="nav-el-2">
-                  <li><a href="">Student Welfare</a></li>
-                  <li><a href="">Downloads</a></li>
+                  <li><a href="{% url 'welfare' %}">Student Welfare</a></li>
+                  <li><a href="{% url 'student-downloads' %}">Downloads</a></li>
                   <li><a href="">Dean of Students</a></li>
                 </ul>
               </li>
@@ -55,7 +55,7 @@
                   <li><a href="">Internship</a></li>
                 </ul>
               </li>
-              <li><a href="">Contacts</a></li>
+              <li><a href="{% url 'contacts' %}">Contacts</a></li>
             </ul>
           </div>
         </div>
