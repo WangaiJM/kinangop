@@ -1,0 +1,12 @@
+{% block news %} {% load static %} {% for latest in latests %}
+<div class="news-card">
+  <!-- <div class="news-card-image">
+    <img src="{% static 'images/view_2.jpg' %}" alt="Test Image" />
+  </div> -->
+  <div class="news-card-body">
+    <h3>{{ latest.title | safe }}</h3>
+    <p>{{ latest.body | safe | truncatewords:25}}</p>
+    <a href="{% url 'single-latest' latest.id latest.slug %}">Read more</a>
+  </div>
+</div>
+{% endfor %} {% endblock%}

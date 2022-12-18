@@ -1,0 +1,28 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Latest Events {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <header class="title-bar">
+        <h2>Latest Events</h2>
+        <a href="/">Home</a>
+      </header>
+      <section class="content">
+        <div class="container">
+          {% for latest in latests %}
+          <h2>
+            <a href="{% url 'single-latest' latest.id latest.slug %}"
+              >{{ latest.title | safe }}</a
+            >
+          </h2>
+          <p>{{ latest.body | safe | truncatewords:100 }}</p>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

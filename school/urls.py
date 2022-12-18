@@ -18,5 +18,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls'))
+    path('', include('news.urls')),
+    path('', include('pages.urls')),
 ]
+
+
+admin.site.site_header = "Kinangop TVC Admin"
+admin.site.site_title = "Kinangop TVC Portal"
+admin.site.index_title = "Welcome to Kinangop TVC Portal"

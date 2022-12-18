@@ -1,0 +1,16 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} {{ latest.title }} {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <header class="title-bar">
+        <h2>{{latest.title}}</h2>
+      </header>
+      <section class="content">{{latest.body | safe}}</section>
+    </div>
+  </section>
+  {% endblock %}
+</div>
