@@ -11,12 +11,39 @@
         <a href="/">Home</a>
       </header>
       <section class="content">
-        <h2>Food and Beverage</h2>
-        <ul>
-          <li>Artisan in Food and beverage</li>
-          <li>Certificate in Food and beverage</li>
-          <li>Diploma in Food and beverage</li>
-        </ul>
+        <table>
+          <caption>
+            Academic Programs
+          </caption>
+          <thead>
+            {% for department in departments %}
+            <tr>
+              <th colspan="6">{{ department.department_name }}</th>
+            </tr>
+            <tr>
+              <th scope="col">Course</th>
+              <th scope="col">Module</th>
+              <th scope="col">Exam Body</th>
+              <th scope="col">Minimum Qualification</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Intake</th>
+            </tr>
+          </thead>
+          {% for course in department.course_set.all %}
+          <tbody>
+            <tr>
+              <td scope="row" data-label="Course">{{ course.course_name}}</td>
+              <td scope="row" data-label="Module">{{ course.module}}</td>
+              <td data-label="Exam Body">{{ course.exam_body}}</td>
+              <td data-label="Minimum Qualification">
+                {{ course.min_qualification }}
+              </td>
+              <td data-label="Duration">{{ course.duration }}</td>
+              <td data-label="Intake">{{ course.intake }}</td>
+            </tr>
+          </tbody>
+          {% endfor%} {% endfor %}
+        </table>
       </section>
     </div>
   </section>

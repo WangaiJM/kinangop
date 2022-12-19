@@ -9,7 +9,7 @@ urlpatterns = [
     path('vision/', views.vision, name='vision'),
     # admissions
     path('gen-procedure/', views.procedure, name='procedures'),
-    path('programs/', views.programs, name='programs'),
+
     path('adminssion-downloads/', views.admissionDownloads, name='admission-downloads'),
     path('online-registration/', views.onlineReg, name='online-registration'),
     # students
