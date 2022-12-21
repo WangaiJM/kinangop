@@ -1,0 +1,24 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Service Charter {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <header class="title-bar">
+        <h2>Service Charter</h2>
+        <a href="/">Home</a>
+      </header>
+      <section class="content">
+        <embed
+          src="{% static 'files/ENGLISH_CHARTER.pdf' %}"
+          width="100%"
+          height="2100px"
+          type="application/pdf"
+        />
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

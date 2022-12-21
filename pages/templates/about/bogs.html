@@ -8,14 +8,19 @@
   <!-- banner -->
   <div class="banner">
     <div class="banner-msg">
-      <h2>About Kinangop Technical and Vocational College</h2>
+      <h2>{{ bog.title }}</h2>
     </div>
   </div>
   <section class="main">
     <div class="container">
-      <div class="about">
-        <h2>{{ about.title }}</h2>
-        <div class="content">{{ about.description | safe }}</div>
+      <div class="about about-msg">
+        <div class="about--msg-left">
+          <h2>{{ bog.title }}</h2>
+          <div class="content">{{ bog.message | safe }}</div>
+        </div>
+        <div class="about-msg-right">
+          <img src="{{ bog.image.url }}" alt="Image here" />
+        </div>
       </div>
     </div>
   </section>
