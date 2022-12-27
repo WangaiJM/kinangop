@@ -1,0 +1,19 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Careers {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <section class="content">
+        <ul>
+          {% for internship in internships %}
+          <li>{{ internship.title }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

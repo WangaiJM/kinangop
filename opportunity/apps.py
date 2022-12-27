@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class OppurtunityConfig(AppConfig):
+class OpportunityConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'oppurtunity'
+    name = 'opportunity'
