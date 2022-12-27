@@ -9,9 +9,13 @@
       <section class="content">
         <h2 class="title-head">Career Vacancies</h2>
         <ul>
-          {% for career in careers %}
-          <li><a href="">{{ career.title }}</a></li>
-          {% endfor %}
+          {% for career in careers %} {% if career.active %}
+          <li>
+            <a href="{{ career.file.url }}" download="{{ career.title }}"
+              >{{ career.title }}</a
+            >
+          </li>
+          {% endif %} {% endfor %}
         </ul>
       </section>
     </div>

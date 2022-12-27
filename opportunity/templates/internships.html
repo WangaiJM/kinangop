@@ -10,7 +10,9 @@
         <h2 class="title-head">Internship Opportunities</h2>
         <ul>
           {% for internship in internships %}
-          <li>{{ internship.title }}</li>
+           {% if internship.active %}
+            <li><a href="{{internship.file.url}}" download="{{ internship.title }}">{{ internship.title }}</li></a>
+            {% endif %}
           {% endfor %}
         </ul>
       </section>

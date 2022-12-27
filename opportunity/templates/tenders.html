@@ -9,9 +9,13 @@
       <section class="content">
         <h2 class="title-head">Available Tenders</h2>
         <ul>
-          {% for tender in tenders %}
-          <li>{{ tender.title }}</li>
-          {% endfor %}
+          {% for tender in tenders %} {% if tender.active %}
+          <li>
+            <a href="{{ tender.file.url }}" download="{{ tender.title }}"
+              >{{ tender.title }}</a
+            >
+          </li>
+          {% endif %} {% endfor %}
         </ul>
       </section>
     </div>
