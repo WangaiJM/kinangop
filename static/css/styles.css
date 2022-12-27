@@ -130,6 +130,13 @@ button {
   text-decoration: underline;
   display: block;
 }
+.title-head {
+  padding: 0.5rem;
+  font-size: 2.4rem;
+  background-color: rgb(238, 236, 236);
+  border-radius: 0.8rem;
+  margin: 2rem 0;
+}
 /* footer */
 footer {
   min-height: 7rem;
