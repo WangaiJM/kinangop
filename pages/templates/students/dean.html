@@ -1,0 +1,28 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} About Us {% endblock %}</div>
+
+<div>
+  {% block content %}
+
+  <!-- banner -->
+  <div class="banner">
+    <div class="banner-msg">
+      <h2>{{ dean.title }}</h2>
+    </div>
+  </div>
+  <section class="main">
+    <div class="container">
+      <div class="about about-msg">
+        <div class="about--msg-left">
+          <h2>{{ dean.title }}</h2>
+          <div class="content">{{ dean.message | safe }}</div>
+        </div>
+        <div class="about-msg-right">
+          <img src="{{ dean.image.url }}" alt="Image here" />
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+</div>

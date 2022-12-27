@@ -10,7 +10,13 @@
         <h2>{{upcoming.title}}</h2>
         <a href="/">Home</a>
       </header>
-      <section class="content">{{upcoming.body | safe}}</section>
+      <section class="content">
+        <div class="content-image">
+          <img src="{{ upcoming.image.url }}" alt="Test Image" />
+        </div>
+
+        {{upcoming.body | safe}}
+      </section>
     </div>
   </section>
   {% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import about, statement, principal, board_of_governor
+from .models import about, statement, principal, board_of_governor, dean
 
 
 def index(request):
@@ -26,14 +26,18 @@ def principalView(request):
     context = {'principal': principals}
     return render(request, 'about/principal.html', context)
 
+def deanView(request):
+    deans = dean.objects.last()
+    context = {'dean': deans}
+    return render(request, 'students/dean.html', context)
+
 def service_charter(request):
     return render(request, 'about/service_charter.html')
 
 # Admissions
 def procedure(request):
     return render(request, 'admissions/procedure.html')
-def programs(request):
-    return render(request, 'admissions/programs.html')
+
 def admissionDownloads(request):
     return render(request, 'admissions/admission-downloads.html')
 def onlineReg(request):

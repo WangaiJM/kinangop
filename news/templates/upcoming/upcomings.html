@@ -1,8 +1,8 @@
 {% block news %} {% load static %} {% for upcoming in upcomings %}
 <div class="news-card">
-  <!-- <div class="news-card-image">
-    <img src="{% static 'images/view_2.jpg' %}" alt="Test Image" />
-  </div> -->
+  <div class="news-card-image">
+    <img src="{{ upcoming.image.url }}" alt="Test Image" />
+  </div>
   <div class="news-card-body">
     <h3>{{ upcoming.title | safe }}</h3>
     <p>{{ upcoming.body | safe | truncatewords:25}}</p>

@@ -37,3 +37,14 @@ class board_of_governor(models.Model):
         
     def __str__(self):
         return self.title
+
+class dean(models.Model):
+    title = models.CharField(max_length=100)
+    message = RichTextField()
+    image = models.ImageField(upload_to='images/dean')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Dean of Students'

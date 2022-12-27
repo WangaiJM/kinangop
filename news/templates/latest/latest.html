@@ -9,7 +9,12 @@
       <header class="title-bar">
         <h2>{{latest.title}}</h2>
       </header>
-      <section class="content">{{latest.body | safe}}</section>
+      <section class="content">
+        <div class="content-image">
+          <img src="{{ latest.image.url }}" alt="Test Image" />
+        </div>
+        {{latest.body | safe}}
+      </section>
     </div>
   </section>
   {% endblock %}
