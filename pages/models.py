@@ -48,3 +48,13 @@ class dean(models.Model):
 
     class Meta:
         verbose_name_plural = 'Dean of Students'
+
+class service_charter(models.Model):
+    title = models.CharField(max_length=150)
+    charter = models.FileField(upload_to='charter/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Service Charter'

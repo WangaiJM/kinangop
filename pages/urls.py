@@ -7,7 +7,7 @@ urlpatterns = [
     # about
     path('about/', views.aboutView, name='about'),
     path('vision/', views.vision, name='vision'),
-    path('service-charter/', views.service_charter, name='service_charter'),
+    path('service-charter/', views.serviceCharterView, name='service_charter'),
     path('board-of-governors/', views.bogView, name='bogs'),
     path('principal/', views.principalView, name='principal'),
     # admissions

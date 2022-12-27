@@ -6,11 +6,17 @@
   {% block content %}
   <section class="main">
     <div class="container">
-      <header class="title-bar">
-        <h2>Service Charter</h2>
-      </header>
       <section class="content">
-        <h2><a href="">English Service Charter</a></h2>
+        <h2 class="title-head">Service Charter</h2>
+        <ul>
+          {% for service in services %}
+          <li>
+            <a href="{{ service.charter.url }}" download="{{ service.title }}">
+              {{service.title }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
       </section>
     </div>
   </section>
