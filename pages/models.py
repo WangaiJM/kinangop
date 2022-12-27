@@ -58,3 +58,15 @@ class service_charter(models.Model):
 
     class Meta:
         verbose_name_plural = 'Service Charter'
+
+class gallery(models.Model):
+    title = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='gallery/')
+    description = RichTextField(blank=True, null=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Galleries'

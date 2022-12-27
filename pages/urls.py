@@ -10,6 +10,7 @@ urlpatterns = [
     path('service-charter/', views.serviceCharterView, name='service_charter'),
     path('board-of-governors/', views.bogView, name='bogs'),
     path('principal/', views.principalView, name='principal'),
+    path('gallery/', views.galleryView, name='gallery'),
     # admissions
     path('gen-procedure/', views.procedure, name='procedures'),
 

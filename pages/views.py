@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import about, statement, principal, board_of_governor, dean, service_charter
+from .models import about, statement, principal, board_of_governor, dean, service_charter, gallery
 
 
 def index(request):
@@ -35,6 +35,11 @@ def serviceCharterView(request):
     services = service_charter.objects.all()
     context = {'services' : services}
     return render(request, 'about/service_charter.html', context)
+
+def galleryView(request):
+    galleries = gallery.objects.all().order_by('-uploaded_at')
+    context = {'galleries' : galleries}
+    return render(request, 'gallery/gallery.html', context)
 
 # Admissions
 def procedure(request):
