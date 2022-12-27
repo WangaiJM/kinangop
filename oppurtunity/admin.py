@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import tender, career, internship
 
-# Register your models here.
+admin.site.register(tender)
+admin.site.register(career)
+admin.site.register(internship)
