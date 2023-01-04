@@ -54,6 +54,3 @@ def studentDownloads(request):
     return render(request, 'students/student-downloads.html')
 def welfare(request):
     return render(request, 'students/welfare.html')
-# contacts
-def contacts(request):
-    return render(request, 'contacts/contact.html')

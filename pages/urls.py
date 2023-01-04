@@ -20,6 +20,5 @@ urlpatterns = [
     path('student-downloads/', views.studentDownloads, name='student-downloads'),
     path('welfare/', views.welfare, name="welfare"),
     path('dean/', views.deanView, name='dean'),
-    # contacts
-    path('contacts/', views.contacts, name="contacts"),
+   
 ]
