@@ -9,14 +9,18 @@
       <section class="content">
         <h2 class="title-head">Gallery</h2>
 
-        {% for gallery in galleries %}
         <div class="image-card">
-          <div class="card-body">
-            <img src="{{ gallery.image.url }}" alt="{{ gallery.title }}" />
+          {% for gallery in galleries %}
+          <div class="card">
+            <div class="card-body">
+              <a href="{{ gallery.image.url }}"
+                ><img src="{{ gallery.image.url }}" alt="{{ gallery.title }}"
+              /></a>
+            </div>
+            <div class="card-footer">{{gallery.description | safe }}</div>
           </div>
-          <div class="card-footer">{{gallery.description | safe }}</div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </section>
     </div>
   </section>

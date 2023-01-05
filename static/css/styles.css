@@ -399,3 +399,29 @@ input[type="submit"]:hover {
     margin-top: 0;
   }
 }
+/* Gallery */
+.image-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  column-gap: 2rem;
+  row-gap: 4rem;
+  grid-auto-flow: dense;
+}
+.image-card > .card {
+  padding: 0.5rem;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+.image-card .card-body img {
+  border-radius: 1.2rem;
+  transform: scale(0.9);
+  transition: transform 300ms ease;
+}
+.image-card .card-body img:hover {
+  transform: scale(1);
+}
+.image-card .card-footer {
+  width: 80%;
+  margin: auto;
+  margin-top: 0.8rem;
+}
+/* end Gallery */
