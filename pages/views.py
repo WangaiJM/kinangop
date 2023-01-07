@@ -47,8 +47,7 @@ def procedure(request):
 
 def admissionDownloads(request):
     return render(request, 'admissions/admission-downloads.html')
-def onlineReg(request):
-    return render(request,'admissions/online-reg.html')
+
 # students
 def studentDownloads(request):
     return render(request, 'students/student-downloads.html')

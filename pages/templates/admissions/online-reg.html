@@ -8,6 +8,69 @@
     <div class="container">
       <section class="content">
         <h2 class="title-head">Online Registration</h2>
+        <div class="online-content">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col">
+                <label>{{ form.surname.label}}</label>
+                {{form.surname}}
+              </div>
+              <div class="col">
+                <label>{{ form.firstname.label}}</label>
+                {{form.firstname}}
+              </div>
+              <div class="col">
+                <label>{{ form.middlename.label}}</label>
+                {{form.middlename}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>{{ form.email.label}}</label>
+                {{form.email}}
+              </div>
+              <div class="col">
+                <label>{{ form.contact.label}}</label>
+                {{form.contact}}
+              </div>
+              <div class="col">
+                <label>{{ form.gender.label}}</label>
+                {{form.gender}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>{{ form.address.label}}</label>
+                {{form.address}}
+              </div>
+              <div class="col">
+                <label>{{ form.postal_code.label}}</label>
+                {{form.postal_code}}
+              </div>
+              <div class="col">
+                <label>{{ form.town.label}}</label>
+                {{form.town}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>{{ form.course.label}}</label>
+                {{form.course}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>{{ form.kcse_certificate.label}}</label>
+                {{form.kcse_certificate}}
+                <small>{{form.kcse_certificate.errors}}</small>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Register" class="btn-onl" />
+            </div>
+          </form>
+        </div>
       </section>
     </div>
   </section>

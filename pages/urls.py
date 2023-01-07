@@ -15,7 +15,6 @@ urlpatterns = [
     path('gen-procedure/', views.procedure, name='procedures'),
 
     path('adminssion-downloads/', views.admissionDownloads, name='admission-downloads'),
-    path('online-registration/', views.onlineReg, name='online-registration'),
     # students
     path('student-downloads/', views.studentDownloads, name='student-downloads'),
     path('welfare/', views.welfare, name="welfare"),

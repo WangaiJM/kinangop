@@ -345,6 +345,7 @@ table th {
   padding: 20px;
 }
 input[type="text"],
+input[type="email"],
 select,
 textarea {
   width: 100%;
@@ -425,3 +426,41 @@ input[type="submit"]:hover {
   margin-top: 0.8rem;
 }
 /* end Gallery */
+/* content uls */
+.content ul {
+  border-radius: 1rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.05);
+}
+.content ul li {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  width: 95%;
+  margin: auto;
+}
+.content ul li:last-child {
+  border-bottom: none;
+}
+/* online registration */
+.online-content {
+  background-color: #f2f2f2;
+  padding: 2rem 0;
+}
+.online-content form {
+  width: 80%;
+  margin: auto;
+}
+.online-content .row {
+  display: flex;
+}
+.online-content .col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0.2rem 1rem;
+}
+.online-content small {
+  color: red;
+}
+.btn-onl {
+  margin-top: 1rem;
+}

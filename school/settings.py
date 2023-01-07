@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'department',
     'ckeditor',
     'opportunity',
-    'contact'
+    'contact',
+    'registration'
 ]
 
 MIDDLEWARE = [
