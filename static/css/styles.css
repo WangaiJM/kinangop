@@ -43,9 +43,9 @@ button {
 }
 
 .btn {
-  padding: 1.6rem;
-  border: 2px solid rgb(119, 216, 119);
-  border-radius: 1.2rem;
+  padding: 1rem;
+  border: 1px solid rgb(119, 216, 119);
+  border-radius: 0.4rem;
 }
 
 /* Portal nav */
@@ -295,41 +295,6 @@ table th {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-  }
-  table caption {
-    font-size: 1.3em;
-  }
-  table thead {
-    border: none;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: 0.625em;
-  }
-  table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: 0.8em;
-    text-align: right;
-  }
-  table td::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-}
 
 /* end table */
 /* contacts */
@@ -392,14 +357,7 @@ input[type="submit"]:hover {
   display: table;
   clear: both;
 }
-@media screen and (max-width: 600px) {
-  .col-25,
-  .col-75,
-  input[type="submit"] {
-    width: 100%;
-    margin-top: 0;
-  }
-}
+
 /* Gallery */
 .image-card {
   display: grid;
@@ -463,4 +421,163 @@ input[type="submit"]:hover {
 }
 .btn-onl {
   margin-top: 1rem;
+}
+/* Mobile */
+@media screen and (max-width: 750px) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+  /* Portal nav */
+  .portal-nav {
+    background-color: rgb(119, 216, 119);
+    display: none;
+  }
+  .portal-nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .portal-nav li {
+    margin: 0.4rem;
+  }
+  .portal-nav a {
+    color: #fff;
+  }
+  /* main-nav */
+  .main-nav {
+    background-color: rgb(27, 27, 145);
+  }
+  .main-nav-items {
+    display: block;
+    padding: 0 5rem;
+  }
+  .main-nav-items a {
+    color: #fff;
+  }
+  .nav-el-1 {
+    display: none;
+    position: relative;
+  }
+  .nav-el-1 li {
+    padding: 2rem;
+  }
+  .nav-el-2 {
+    display: none;
+    position: absolute;
+    background-color: rgb(27, 27, 145);
+    right: 0;
+  }
+  .nav-el-2 li {
+    padding: 0.5rem 0;
+  }
+  .nav-el-2 a {
+    padding: 0 1rem;
+  }
+  .nav-el-1 li:hover .nav-el-2 {
+    display: list-item;
+  }
+  /* banner */
+  .banner-msg {
+    display: none;
+  }
+  /* news */
+  .news > .container {
+    display: block;
+  }
+  .latest,
+  .events {
+    padding: 2rem 0.5rem;
+  }
+  .latest h2,
+  .events h2 {
+    font-size: 2.4rem;
+  }
+  .news-holder {
+    display: block;
+  }
+  .news-card {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .news-card-footer,
+  .events-card-footer {
+    margin: 2rem 0;
+    height: 1.5rem;
+  }
+  /* features */
+  .features {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .features h2 {
+    padding: 1rem 0;
+  }
+  .main-features {
+    display: block;
+  }
+  .feature-content {
+    padding: 1rem;
+  }
+  .feature-images {
+    display: none;
+  }
+  /* about */
+  .about-msg,
+  .about {
+    display: block;
+    padding: 1rem;
+  }
+  .about-msg-right {
+    display: none;
+  }
+  /* table */
+  table {
+    border: 0;
+  }
+  table caption {
+    font-size: 1.3em;
+  }
+  table thead {
+    border: none;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  /* contact-form */
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* contact */
+  .main-content {
+    display: block;
+    padding: 2rem;
+  }
 }

@@ -22,7 +22,7 @@
         <div class="main-content">
           <div class="left-content">
             <form method="POST">
-              {% csrf_token %} {{ form.media }}
+              {% csrf_token %}
               <div class="row">
                 <div class="col-25">
                   <label>{{ form.firstname.label}}</label>
@@ -54,7 +54,7 @@
                 <div class="">{{ form.body }}</div>
               </div>
 
-              <input type="submit" />
+              <input type="submit" class="btn" />
             </form>
           </div>
           <div class="right-content">
