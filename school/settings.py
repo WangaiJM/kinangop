@@ -38,13 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'pages',
     'news',
     'department',
     'ckeditor',
     'opportunity',
     'contact',
-    'registration'
+    'registration',
+    'uploads'
 ]
 
 MIDDLEWARE = [
@@ -150,3 +152,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #         'width': 'auto',
 #     },
 # }
+AUTH_USER_MODEL = 'accounts.User'

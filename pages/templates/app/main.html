@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      {% include 'includes/portal-nav.html' %}
+      <!-- {% include 'includes/portal-nav.html' %} -->
 
       <nav class="main-nav">
           <div class="main-nav-items">
@@ -42,8 +42,8 @@
               <li>
                 <a href="">Students</a>
                 <ul class="nav-el-2">
-                  <!-- <li><a href="{% url 'welfare' %}">Student Welfare</a></li>
-                  <li><a href="{% url 'student-downloads' %}">Downloads</a></li> -->
+                  <!-- <li><a href="{% url 'welfare' %}">Student Welfare</a></li> -->
+                  <li><a href="{% url 'student-downloads' %}">Downloads</a></li>
                   <li><a href="{% url 'dean' %}">Dean of Students</a></li>
                 </ul>
               </li>
@@ -57,6 +57,13 @@
               </li>
               <li><a href="{% url 'gallery' %}">Gallery</a></li>
               <li><a href="{% url 'contacts' %}">Contacts</a></li>
+              <li>
+                <a href="">Portals</a>
+                <ul class="nav-el-2">
+                  <li><a href="">Student portal</a></li>
+                  <li><a href="">Staff Portal</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

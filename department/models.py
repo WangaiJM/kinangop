@@ -23,15 +23,14 @@ class course(models.Model):
     intake = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.course_name + ' ' + self.module
-
+        return self.course_code
 class units(models.Model):
     course = models.ForeignKey(course, on_delete=models.CASCADE)
     unit_code = models.CharField(max_length=150)
     unit = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.unit_code + ' - ' + self.unit 
+        return self.unit_code
 
     class Meta:
         verbose_name_plural = 'Units'
