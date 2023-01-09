@@ -1,0 +1,36 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Login {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <section class="content">
+        <h2 class="title-head">Login</h2>
+        <div class="online-content">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col">
+                <label>{{ form.username.label}}</label>
+                {{form.username}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>{{ form.password.label}}</label>
+                {{form.password}}
+              </div>
+            </div>
+
+            <div class="row">
+              <input type="submit" value="Login" class="btn-onl" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

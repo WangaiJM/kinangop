@@ -1,10 +1,9 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 import uuid
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 
-User = settings.AUTH_USER_MODEL
 
 class Latest(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
