@@ -1,10 +1,14 @@
 from django.shortcuts import render
-from .models import about, statement, principal, board_of_governor, dean, service_charter, gallery
+from .models import about, statement, principal, board_of_governor, dean, service_charter, gallery, carousel
 
 
 def index(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
+def carouselView(request):
+    carouselImg = carousel.objects.all().order_by('-uploaded_at')
+    context = {'carousels' : carouselImg}
+    return render(request, 'app/carousel.html', context)
 # About
 def aboutView(request):
     abouts = about.objects.last()

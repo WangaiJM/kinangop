@@ -70,3 +70,11 @@ class gallery(models.Model):
 
     class Meta:
         verbose_name_plural = 'Galleries'
+
+class carousel(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='carousel/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

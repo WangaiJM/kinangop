@@ -6,9 +6,20 @@
   {% block content %}
   <!-- banner -->
   <div class="banner">
-    <div class="banner-msg">
-      <h2>Kinangop Technical and Vocational College</h2>
-    </div>
+      <button class="arrow-btn prev">&#8656;</button>
+      <button class="arrow-btn next">&#8658;</button>
+
+      <img src="{% static 'images/IMG_9326.jpg' %}" alt="" class="image active" />
+      <img src="{% static 'images/IMG_9323.jpg' %}" alt="" class="image " />
+      <img src="{% static 'images/IMG_9329.jpg' %}" alt="" class="image " />
+      <img src="{% static 'images/IMG_9325.jpg' %}" alt="" class="image " />
+      <img src="{% static 'images/IMG_9324.jpg' %}" alt="" class="image " />
+      <!-- {% include 'app/carousel.html' %} -->
+
+
+      <div class="banner-msg">
+        Kinangop Technical and Vocational College
+      </div>
   </div>
   <!-- News Section -->
   <section class="news">
@@ -36,19 +47,16 @@
   </section>
   <!-- Features Section -->
   <section class="features">
-    <h2>Features</h2>
+    <h2>Welcome</h2>
     <div class="container">
       <div class="main-features">
         <div class="feature-content">
-          <h2>Lorem ipsum dolor sit.</h2>
+          <h2>Information Communication and Technology</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-            distinctio, inventore sit molestias possimus dolore veniam! Tempora
-            in ab repellendus!
+            We empower young generation in the field of computing to become digital wizards of the future
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate
-            blanditiis earum necessitatibus natus, sit quasi.
+            This department handles Systems Development and Administration functions such as: Systems Development, Administration, Planning, installation, support, maintenance and continuous improvement of network infrastructure, The physical security of all computing and communication premises, computers, communication equipment and appliances and  data management system.
           </p>
         </div>
         <div class="feature-images">

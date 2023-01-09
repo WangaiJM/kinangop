@@ -11,6 +11,7 @@ urlpatterns = [
     path('board-of-governors/', views.bogView, name='bogs'),
     path('principal/', views.principalView, name='principal'),
     path('gallery/', views.galleryView, name='gallery'),
+    path('carousel/', views.carouselView, name='carousel'),
     # admissions
     path('gen-procedure/', views.procedure, name='procedures'),
 
