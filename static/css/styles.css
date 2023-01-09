@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 
+:root {
+  --primary-color: hsl(154, 59%, 51%);
+  --secondary-color: hsl(16, 87%, 62%);
+  --white: hsl(255, 100%, 100%);
+  --blue: hsl(248, 32%, 49%);
+  --darkBlue: hsl(249, 10%, 26%);
+  --grayishBlue: hsl(246, 25%, 77%);
+  --darkgreen: hsl(154, 50%, 45%);
+}
 *,
 *::after,
 *::before {
@@ -44,103 +53,111 @@ button {
 
 .btn {
   padding: 1rem;
-  border: 1px solid rgb(119, 216, 119);
+  border: 1px solid var(--primary-color);
   border-radius: 0.4rem;
 }
-
-/* Portal nav */
-.portal-nav {
-  min-height: 5rem;
-  background-color: rgb(119, 216, 119);
-  display: flex;
-  align-items: center;
-}
-.portal-nav ul {
-  display: flex;
-  padding: 0 5rem;
-}
-.portal-nav li {
-  margin: 0 1rem;
-}
-.portal-nav a {
-  color: #fff;
-}
-/* main-nav */
-.main-nav {
-  background-color: rgb(27, 27, 145);
-  min-height: 7rem;
-}
-.main-nav-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5rem;
-  height: 7rem;
-}
-.main-nav-items a {
-  color: #fff;
-}
-.nav-el-1 {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
+/* nav */
+.nav {
   position: relative;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  padding: 2rem 1rem;
 }
-.nav-el-1 li {
+.nav-header a {
+  color: var(--white);
+  padding: 1rem;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+.main-nav li {
+  position: relative;
+}
+.main-nav a {
   padding: 2rem;
+  color: var(--white);
+  margin: 0 0.4rem;
 }
-.nav-el-2 {
+.main-nav a:hover {
+  color: var(--darkBlue);
+}
+.nav-dropdown {
   display: none;
+  background-color: var(--primary-color);
   position: absolute;
-  background-color: rgb(27, 27, 145);
-  width: 30%;
-  top: 5rem;
+  z-index: 1;
+  left: 0;
+  top: 3rem;
+  width: 25rem;
 }
-.nav-el-2 li {
+.nav-dropdown li {
   padding: 1rem 0;
 }
-.nav-el-2 a {
-  padding: 0 1.4rem;
+.nav-dropdown li:hover {
+  background-color: var(--darkgreen);
 }
-.nav-el-2 li:hover {
-  background-color: rgb(18, 18, 83);
+.nav-dropdown a {
+  /* padding: 2rem 0; */
 }
-.nav-el-1 li:hover .nav-el-2 {
+.main-nav li:hover .nav-dropdown {
   display: list-item;
 }
-/* title bar */
-.title-bar {
-  margin-top: 4rem;
-  padding: 3rem;
-  background-color: rgb(27, 27, 145);
-  border-radius: 0.5rem;
-  color: #fff;
+#hamburger {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  margin-right: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: none;
 }
-.title-bar h2 {
-  font-size: 3.6rem;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
+#hamburger span {
+  position: absolute;
+  background-color: var(--white);
+  width: 100%;
+  height: 0.2rem;
+  transition: all 300ms ease;
 }
-.title-bar a {
-  color: #fff;
-  padding: 1rem;
-  background-color: rgb(41, 44, 223);
-  margin: 1rem 0;
-  text-decoration: underline;
-  display: block;
+#hamburger span:nth-child(1) {
+  top: 0;
+  left: 0;
 }
+#hamburger span:nth-child(2) {
+  top: 50%;
+  left: 0;
+}
+#hamburger span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+.nav.active #hamburger span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg);
+}
+.nav.active #hamburger span:nth-child(2) {
+  left: -100%;
+  opacity: 0;
+}
+.nav.active #hamburger span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+/* title-head */
 .title-head {
   padding: 0.5rem;
   font-size: 2.4rem;
-  background-color: rgb(238, 236, 236);
+  background-color: var(--secondary-color);
   border-radius: 0.8rem;
   margin: 2rem 0;
 }
 /* footer */
 footer {
   min-height: 7rem;
-  background-color: orange;
+  background-color: var(--secondary-color);
   text-align: center;
 }
 /* Banner */
@@ -156,7 +173,7 @@ footer {
   position: absolute;
   bottom: 3rem;
   left: 2rem;
-  background-color: rgb(119, 216, 119);
+  background-color: var(--primary-color);
   height: 9rem;
   display: flex;
   justify-content: center;
@@ -319,14 +336,16 @@ textarea {
   border-radius: 4px;
   resize: vertical;
 }
-
+.django-ckeditor-widget {
+  width: 100%;
+}
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
 input[type="submit"] {
-  background-color: #04aa6d;
+  background-color: var(--primary-color);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -336,7 +355,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: var(--primary-color);
 }
 
 .col-25 {
@@ -417,13 +436,13 @@ input[type="submit"]:hover {
   padding: 0.2rem 1rem;
 }
 .online-content small {
-  color: red;
+  color: var(--secondary-color);
 }
 .btn-onl {
   margin-top: 1rem;
 }
 /* Mobile */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
   body {
     font-size: 1.4rem;
   }
@@ -431,53 +450,34 @@ input[type="submit"]:hover {
   .container {
     max-width: 100%;
   }
-  /* Portal nav */
-  .portal-nav {
-    background-color: rgb(119, 216, 119);
-    display: none;
-  }
-  .portal-nav ul {
-    display: flex;
-    flex-direction: column;
-  }
-  .portal-nav li {
-    margin: 0.4rem;
-  }
-  .portal-nav a {
-    color: #fff;
-  }
-  /* main-nav */
+  /* Nav */
   .main-nav {
-    background-color: rgb(27, 27, 145);
-  }
-  .main-nav-items {
-    display: block;
-    padding: 0 5rem;
-  }
-  .main-nav-items a {
-    color: #fff;
-  }
-  .nav-el-1 {
-    display: none;
-    position: relative;
-  }
-  .nav-el-1 li {
-    padding: 2rem;
-  }
-  .nav-el-2 {
-    display: none;
+    /* display: none; */
     position: absolute;
-    background-color: rgb(27, 27, 145);
+    top: 100%;
     right: 0;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    background-color: var(--darkBlue);
+    align-items: flex-end;
   }
-  .nav-el-2 li {
-    padding: 0.5rem 0;
+  .main-nav li {
+    padding: 1rem;
   }
-  .nav-el-2 a {
-    padding: 0 1rem;
+  .main-nav li:hover {
+    background-color: var(--darkgreen);
   }
-  .nav-el-1 li:hover .nav-el-2 {
-    display: list-item;
+  .nav-dropdown {
+    transform: translateX(-100%);
+    right: 100%;
+    top: 0;
+  }
+  #hamburger {
+    display: block;
+  }
+  .nav.active .main-nav {
+    display: block;
   }
   /* banner */
   .banner-msg {

@@ -10,69 +10,83 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
-    <header>
-      <!-- {% include 'includes/portal-nav.html' %} -->
+    <header class="nav">
+      <h1 class="nav-header"><a href="/">Kinangop TVC</a></h1>
 
-      <nav class="main-nav">
-          <div class="main-nav-items">
-            <h1><a href="/">Kinangop TVC</a></h1>
-            <ul class="nav-el-1">
-              <li>
-                <a href="{% url 'about' %}">About</a>
-                <ul class="nav-el-2">
-                  <li><a href="{% url 'about' %}">Brief History</a></li>
-                  <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
-                  <li><a href="{% url 'service_charter' %}">Service Charter</a></li>
-                  <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
-                  <li><a href="{% url 'principal' %}">Principal</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="{% url 'procedures' %}">Admission</a>
-                <ul class="nav-el-2">
-                  <li><a href="{% url 'procedures' %}">Application Procedure</a></li>
-                  <li><a href="{% url 'programs' %}">Academic Programmes</a></li>
-                  <!-- <li><a href="">Fee Structure</a></li> -->
-                  <!-- <li><a href="">Other Downloads</a></li> -->
-                  <li><a href="{% url 'online-registration' %}">Online Registration</a></li>
-                  <!-- <li><a href="">Download Registration Form</a></li> -->
-                  <li><a href="{% url 'contacts' %}">Contact Us</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="">Students</a>
-                <ul class="nav-el-2">
-                  <!-- <li><a href="{% url 'welfare' %}">Student Welfare</a></li> -->
-                  <li><a href="{% url 'student-downloads' %}">Downloads</a></li>
-                  <li><a href="{% url 'dean' %}">Dean of Students</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="">Opportunities</a>
-                <ul class="nav-el-2">
-                  <li><a href="{% url 'careers' %}">Careers</a></li>
-                  <li><a href="{% url 'tenders' %}">Tenders</a></li>
-                  <li><a href="{% url 'internships' %}">Internship</a></li>
-                </ul>
-              </li>
-              <li><a href="{% url 'gallery' %}">Gallery</a></li>
-              <li><a href="{% url 'contacts' %}">Contacts</a></li>
-              <li>
-                <a href="">Portals</a>
-                <ul class="nav-el-2">
-                  <li><a href="">Student portal</a></li>
-                  <li><a href="">Staff Portal</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <ul class="main-nav">
+        <li>
+          <a href="{% url 'about' %}">About</a>
+          <ul class="nav-dropdown">
+            <li><a href="{% url 'about' %}">Brief History</a></li>
+            <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
+            <li><a href="{% url 'service_charter' %}">Service Charter</a></li>
+            <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
+            <li><a href="{% url 'principal' %}">Principal</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Administration</a>
+          <ul class="nav-dropdown">
+            <li><a href="{% url 'principal' %}">Principal</a></li>
+            <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="{% url 'procedures' %}">Admission</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="{% url 'procedures' %}">Application Procedure</a>
+            </li>
+            <li><a href="{% url 'programs' %}">Academic Programmes</a></li>
+            <!-- <li><a href="">Fee Structure</a></li> -->
+            <!-- <li><a href="">Other Downloads</a></li> -->
+            <li>
+              <a href="{% url 'online-registration' %}">Online Registration</a>
+            </li>
+            <!-- <li><a href="">Download Registration Form</a></li> -->
+            <li><a href="{% url 'contacts' %}">Contact Us</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Students</a>
+          <ul class="nav-dropdown">
+            <!-- <li><a href="{% url 'welfare' %}">Student Welfare</a></li> -->
+            <li><a href="{% url 'student-downloads' %}">Downloads</a></li>
+            <li><a href="{% url 'dean' %}">Dean of Students</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Opportunities</a>
+          <ul class="nav-dropdown">
+            <li><a href="{% url 'careers' %}">Careers</a></li>
+            <li><a href="{% url 'tenders' %}">Tenders</a></li>
+            <li><a href="{% url 'internships' %}">Internship</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Portals</a>
+          <ul class="nav-dropdown">
+            <li><a href="">Student portal</a></li>
+            <li><a href="">Staff Portal</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'contacts' %}">Contacts</a></li>
+      </ul>
+      <button id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     {% block content %} {% endblock %}
 
     <footer>
-      <p id="copy">Copyright &copy; {% now "Y" %}</p>
+      <p id="copy">
+        Copyright &copy; {% now "Y" %} KInangop TVC. All Rights Reserved
+      </p>
     </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
   </body>
 </html>
