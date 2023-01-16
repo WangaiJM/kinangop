@@ -1,0 +1,46 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Student Login {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <section class="content">
+        <h2 class="title-head">Student Login</h2>
+        <div class="login-content">
+          <form method="POST" enctype="multipart/form-data">
+            <img
+              src="{% static 'images/kinangop-logo-removebg.png' %}"
+              alt="Kinangop TVC"
+              class="form-logo"
+            />
+            {% csrf_token %}
+
+            <div class="">
+              <div class="">
+                <label>Admission Number</label>
+                {{login_form.username}}
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <label>{{ login_form.password.label}}</label>
+                {{login_form.password}}
+              </div>
+            </div>
+            <div class="row">
+              {% for message in messages %}
+              <p class="text-danger">{{message}}</p>
+              {% endfor %}
+            </div>
+            <div class="row">
+              <input type="submit" value="Login" class="btn-onl" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

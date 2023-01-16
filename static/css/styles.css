@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 
 :root {
-  --primary-color: hsl(154, 59%, 51%);
-  --secondary-color: hsl(16, 87%, 62%);
+  --primary-color: hsl(120, 100%, 25%);
+  --secondary-color: hsl(29, 100%, 50%);
   --white: hsl(255, 100%, 100%);
   --blue: hsl(248, 32%, 49%);
   --darkBlue: hsl(249, 10%, 26%);
@@ -56,6 +56,14 @@ button {
   border: 1px solid var(--primary-color);
   border-radius: 0.4rem;
 }
+.text-danger {
+  padding: 1rem;
+  color: red;
+  background-color: #f2f2f2;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+}
 /* nav */
 .nav {
   position: relative;
@@ -68,6 +76,10 @@ button {
 .nav-header a {
   color: var(--white);
   padding: 1rem;
+}
+.logo {
+  width: 15rem;
+  height: 10rem;
 }
 .main-nav {
   display: flex;
@@ -482,6 +494,29 @@ input[type="submit"]:hover {
 }
 .btn-onl {
   margin-top: 1rem;
+}
+
+.login-content {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.login-content form {
+  background-color: #ccc;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem 0 var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+.form-logo {
+  width: 15rem;
+  height: 10rem;
+  align-self: center;
 }
 /* Mobile */
 @media screen and (max-width: 950px) {

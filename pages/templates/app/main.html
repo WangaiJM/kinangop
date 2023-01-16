@@ -11,7 +11,12 @@
   </head>
   <body>
     <header class="nav">
-      <h1 class="nav-header"><a href="/">Kinangop TVC</a></h1>
+      <a href="/"
+        ><img
+          src="{% static 'images/kinangop-logo.jpeg' %}"
+          alt="Kinangop TVC"
+          class="logo"
+      /></a>
 
       <ul class="main-nav">
         <li>
@@ -64,8 +69,8 @@
         <li>
           <a href="">Portals</a>
           <ul class="nav-dropdown">
-            <li><a href="{% url 'login' %}">Student portal</a></li>
-            <li><a href="/admin">Staff Portal</a></li>
+            <li><a href="{% url 'student-login' %}">Student portal</a></li>
+            <li><a href="{% url 'staff-login' %}">Staff Portal</a></li>
           </ul>
         </li>
         <li><a href="{% url 'gallery' %}">Gallery</a></li>
