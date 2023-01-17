@@ -27,14 +27,11 @@ class SchoolUserManager(UserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=255, unique=True, blank=False)
-    # email = models.EmailField(unique=True, blank=True)
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    is_teacher = models.BooleanField(default=False)
-    is_student = models.BooleanField(default=False)
 
     date_joined = models.DateTimeField(default=timezone.now)
     last_login = models.DateTimeField(blank=True, null=True)
@@ -42,7 +39,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = SchoolUserManager()
 
     USERNAME_FIELD = 'username'
-    # EMAIL_FIELD = 'email'
     REQUIRED_FIELD = []
 
     class Meta:

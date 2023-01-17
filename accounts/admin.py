@@ -53,9 +53,7 @@ class UserAdmin(SchoolUserAdmin):
 
     fieldsets = (
         (None, {'fields': ('password',)}),
-        # ('Personal Info', {'fields': ('email', )}),
         ('Permissions', {'fields': ('is_staff', 'is_superuser','is_active','user_permissions' ,'groups')}),
-        ('Roles', {'fields': ('is_teacher', 'is_student')}),
         )
 
     add_fieldsets = (
@@ -65,8 +63,8 @@ class UserAdmin(SchoolUserAdmin):
             }),
         )
 
-    list_display = ('username','is_student','is_teacher' ,'is_staff')
-    list_filter = ('is_student','is_teacher' ,'is_staff')
+    list_display = ('username' ,'is_staff')
+    # list_filter = ('is_staff')
     search_fields = ('username',)
     ordering = ('username',)
 

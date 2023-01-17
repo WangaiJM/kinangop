@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'opportunity',
     'contact',
     'registration',
-    'uploads'
+    'uploads',
+    'profiles'
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
