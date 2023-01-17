@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.urls import reverse_lazy
 
+
 def student_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, request.POST)
@@ -15,18 +16,17 @@ def student_login(request):
             user = authenticate(username=username, password=password)
             
             if user is not None:
-                if user.is_student:
-                    login(request, user)
-                    return redirect( 'student-dashboard')
-                else:
+                try:
+                    if user.student_profile.is_student:
+                        login(request, user)
+                        return redirect('student-dashboard')
+                except:
                     messages.error(request, "Unathorized Access")
                     return redirect('student-login')
-            else:
-                messages.error(request, "Invalid Username and/or Password")
-                return redirect('student-login')
         else:
             messages.error(request, "Invalid Username and/or Password")
             return redirect('student-login')
+
 
     form = AuthenticationForm()
     context = { 'login_form' : form }
@@ -43,15 +43,13 @@ def staff_login(request):
             user = authenticate(username=username, password=password)
             
             if user is not None:
-                if user.is_teacher:
-                    login(request, user)
-                    return redirect('staff-dashboard')
-                else:
+                try:
+                    if user.trainer_profile.is_trainer:
+                        login(request, user)
+                        return redirect('staff-dashboard')
+                except:
                     messages.error(request, "Unathorized Access")
                     return redirect('staff-login')
-            else:
-                messages.error(request, "Invalid Username and/or Password")
-                return redirect('staff-login')
         else:
             messages.error(request, "Invalid Username and/or Password")
             return redirect('staff-login')

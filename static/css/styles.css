@@ -302,6 +302,11 @@ footer {
   margin-bottom: 1rem;
   text-align: justify;
 }
+.feature-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* about */
 .about h2 {
   text-align: center;

@@ -7,7 +7,7 @@ User = settings.AUTH_USER_MODEL
 class student_profile(models.Model):
     student_id = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(max_length=150)
-    middlename = models.CharField(max_length=150, null=True)
+    middlename = models.CharField(max_length=150,blank=True, null=True)
     lastname = models.CharField(max_length=150)
     email = models.EmailField(max_length=150)
     contact = models.CharField(max_length=150)
