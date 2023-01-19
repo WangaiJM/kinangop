@@ -39,6 +39,7 @@ class units(models.Model):
 class department_message(models.Model):
     department = models.ForeignKey(department, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
+    display_image = models.ImageField(upload_to='department/image', default='')
     brief = RichTextField()
     message = RichTextField()
 

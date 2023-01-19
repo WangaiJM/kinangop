@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from .models import Latest, Upcoming
+from department.models import department_message, department_images
 
 def newsView(request):
     latests = Latest.objects.all().order_by('-created_at')[:6]
     upcomings = Upcoming.objects.all().order_by('-created_at')[:2]
+    deptMsg = department_message.objects.all()
+    deptImg = department_images.objects.all()
     context = {
         'latests' : latests,
-        'upcomings' : upcomings
+        'upcomings' : upcomings,
+        'dept_msgs' : deptMsg,
+        'dept_images' : deptImg
     }
 
     return render(request, 'index.html', context)

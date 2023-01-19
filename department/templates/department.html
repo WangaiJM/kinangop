@@ -1,0 +1,40 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} {{ deptmsg.title }} {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="main">
+    <div class="container">
+      <h2 class="title-head">{{ deptmsg.title }}</h2>
+      <section class="content">
+        <div class="content-image">
+          <img
+            src="{{ deptmsg.display_image.url  }}"
+            alt="{{ deptmsg.title }}"
+          />
+        </div>
+        {{ deptmsg.message | safe }}
+
+        <h2 class="title-head">Department gallery</h2>
+        <div class="image-card">
+          {% for img in deptimgs %}
+          <!-- check for existing image in the departmenr -->
+          {% if img.department == deptmsg.department %}
+          <div class="card">
+            <div class="card-body">
+              <a href="{{ img.image.url }}"
+                ><img src="{{ img.image.url }}" alt="{{ gallery.title }}"
+              /></a>
+            </div>
+            <!-- <div class="card-footer">{{gallery.description | safe }}</div> -->
+          </div>
+          {% endif %}
+          <!-- end of check -->
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </section>
+  {% endblock %}
+</div>

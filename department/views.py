@@ -1,8 +1,18 @@
 from django.shortcuts import render
-from .models import department
+from .models import department, department_message, department_images
 
-def programs(request):
+def programsView(request):
     departments = department.objects.all()
     context = {'departments' : departments }
     return render(request, 'admissions/programs.html', context)
+
+def departmentView(request, dept_name, dept_id):
+    deptmsg = department_message.objects.get(id=dept_id)
+    deptimgs = department_images.objects.all()
+    context = {
+        'deptmsg' : deptmsg,
+        'deptimgs' : deptimgs
+    }
+
+    return render(request, 'department.html', context)
 
