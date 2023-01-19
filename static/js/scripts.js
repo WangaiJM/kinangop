@@ -10,7 +10,7 @@ hamburger.addEventListener("click", () => {
 // carousel
 const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
-const images = document.querySelectorAll(".image");
+const images = document.querySelectorAll(".carousel-item");
 
 let current = 0;
 
@@ -30,13 +30,12 @@ function nextSlide() {
 
   image = images[current];
 
+  console.log(image);
   image.classList.add("active");
 }
 
 function prevSlide() {
-  console.log(current);
   current--;
-  console.log(current);
 
   if (current < 0) {
     current = images.length - 1;

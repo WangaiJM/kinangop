@@ -170,6 +170,89 @@ footer {
   background-color: var(--secondary-color);
   text-align: center;
 }
+/* carousel */
+.carousel {
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-inner {
+  height: 100%;
+  display: flex;
+  overflow: visible;
+  position: relative;
+}
+.carousel-item {
+  height: 100%;
+  width: 100%;
+  display: none;
+  overflow: visible;
+  position: absolute;
+}
+.carousel-item.active {
+  display: block;
+  /* animation: show 1s ease-in-out 1s; */
+}
+.carousel-item.active img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.carousel-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  transform: translateX(-50%);
+  box-shadow: 0 0 1rem 0 var(--secondary-color);
+}
+.carousel-caption h5 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.carousel-caption p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+}
+@keyframes show {
+  0% {
+    opacity: 0.4;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Intake cta */
+.intake-cta {
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  padding: 2rem;
+  animation: blink 300ms linear infinite;
+  cursor: pointer;
+}
+.intake-cta a {
+  color: var(--white);
+  font-weight: 700;
+}
+@keyframes blink {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--secondary-color);
+  }
+}
 /* Banner */
 .banner {
   height: 50rem;
@@ -415,9 +498,7 @@ textarea {
   border-radius: 4px;
   resize: vertical;
 }
-.django-ckeditor-widget {
-  width: 100%;
-}
+
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;

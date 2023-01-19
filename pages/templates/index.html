@@ -4,21 +4,30 @@
 
 <div>
   {% block content %}
-  <!-- banner -->
-  <div class="banner">
-      <button class="arrow-btn prev">&#8656;</button>
-      <button class="arrow-btn next">&#8658;</button>
+  <!-- carousel -->
+  
+    <h1>{{ carousel.title}}</h1>
+  
 
-      <img src="{% static 'images/IMG_9326.jpg' %}" alt="" class="image active" />
-      <img src="{% static 'images/IMG_9323.jpg' %}" alt="" class="image " />
-      <img src="{% static 'images/IMG_9329.jpg' %}" alt="" class="image " />
-      <img src="{% static 'images/IMG_9325.jpg' %}" alt="" class="image " />
-
-
-      <div class="banner-msg">
-        Kinangop Technical and Vocational College
+  <div class="carousel" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for carousel in carouselImages %}
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{ carousel.image.url}}" alt="{{carousel.title}}">
+        <div class="carousel-caption">
+          <h5>{{ carousel.title}}</h5>
+          <p>{{ carousel.description }}</p>
+        </div>
       </div>
+      {% endfor %}
+    </div>
+    <button class="arrow-btn prev">&#8656;</button>
+    <button class="arrow-btn next">&#8658;</button>
+    <div class="intake-cta">
+      <a href="{% url 'online-registration'%}"> Intakes Ongoing <span>Click me to Join</span></a>
+    </div>
   </div>
+
   <!-- News Section -->
   <section class="news">
     <div class="container">

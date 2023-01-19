@@ -1,5 +1,20 @@
-<div>
-  {% for img in carousels %}
-  <img src="{{ img.image.url }}" alt="{{img.title}}" class="image" />
-  {% endfor %}
+<div class="carousel" data-ride="carousel">
+  <div class="carousel-inner">
+    {% for img in carousels %}
+    <div class="carousel-item active">
+      <img
+        class="d-block w-100"
+        src="{{ img.image.url }}"
+        alt="{{img.title}}"
+      />
+      <div class="carousel-caption">
+        <h5>{{img.title}}</h5>
+        <p>{{img.description}}</p>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+  <button class="arrow-btn prev">&#8656;</button>
+  <button class="arrow-btn next">&#8658;</button>
 </div>
