@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class department(models.Model):
     department_name = models.CharField(max_length=150)
@@ -34,3 +35,29 @@ class units(models.Model):
 
     class Meta:
         verbose_name_plural = 'Units'
+
+class department_message(models.Model):
+    department = models.ForeignKey(department, on_delete=models.CASCADE)
+    title = models.CharField(max_length=150)
+    brief = RichTextField()
+    message = RichTextField()
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Department Message"
+        verbose_name_plural = "Department Messages"
+
+class department_images(models.Model):
+    department = models.ForeignKey(department, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='department/image')
+    title = models.CharField(max_length=150)
+    description = RichTextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Department Picture"
+        verbose_name_plural = "Department Pictures"
