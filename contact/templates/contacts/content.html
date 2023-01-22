@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      :root {
+        --primary-color: hsl(120, 100%, 25%);
+        --secondary-color: hsl(29, 100%, 50%);
+      }
+      .title-head {
+        padding: 0.5rem;
+        font-size: 2.4rem;
+        background-color: var(--secondary-color);
+        border-radius: 0.8rem;
+        margin: 2rem 0;
+      }
+
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+
+      .col-25 {
+        float: left;
+        width: 20%;
+        margin-top: 6px;
+      }
+
+      .col-75 {
+        float: left;
+        width: 80%;
+        margin-top: 6px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="title-head">{{subject}}</h3>
+
+    <div class="row">
+      <div class="col-25">
+        <label>Name:</label>
+      </div>
+      <div class="col-75">{{firstname}} {{lastname }}</div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Email:</label>
+      </div>
+      <div class="col-75">{{email}}</div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Content</label>
+      </div>
+      <div class="col-75">{{body}}</div>
+    </div>
+  </body>
+</html>

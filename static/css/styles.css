@@ -50,7 +50,9 @@ select,
 button {
   font: inherit;
 }
-
+.django-ckeditor-widget {
+  width: 100% !important;
+}
 .btn {
   padding: 1rem;
   border: 1px solid var(--primary-color);
@@ -244,6 +246,10 @@ footer {
 .intake-cta a {
   color: var(--white);
   font-weight: 700;
+}
+.link {
+  display: block;
+  padding: 1rem 0;
 }
 @keyframes blink {
   from {
