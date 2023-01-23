@@ -8,9 +8,11 @@ from django.core.exceptions import ValidationError
 
 from .models import User
 
+
 class UserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput())
-    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
+    password2 = forms.CharField(
+        label='Confirm Password', widget=forms.PasswordInput())
 
     class Meta:
         model = User
@@ -30,13 +32,14 @@ class UserCreationForm(forms.ModelForm):
         user.set_password(self.cleaned_data["password1"])
         if commit:
             user.save()
-        
+
         return user
 
+
 class UserChangeForm(forms.ModelForm):
-    password = ReadOnlyPasswordHashField(help_text= ("Raw passwords are not stored, so there is no way to see "
-                  "this user's password, but you can change the password "
-                  "using <a href=\"../password/\">this form</a>."))
+    password = ReadOnlyPasswordHashField(help_text=("Raw passwords are not stored, so there is no way to see "
+                                                    "this user's password, but you can change the password "
+                                                    "using <a href=\"../password/\">this form</a>."))
 
     class Meta:
         model = User
@@ -46,24 +49,24 @@ class UserChangeForm(forms.ModelForm):
             return self.initial["password"]
 
 
-        
 class UserAdmin(SchoolUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
     fieldsets = (
         (None, {'fields': ('password',)}),
-        ('Permissions', {'fields': ('is_staff', 'is_superuser','is_active','user_permissions' ,'groups')}),
-        )
+        ('Permissions', {'fields': ('is_staff', 'is_superuser',
+         'is_active', 'user_permissions', 'groups')}),
+    )
 
     add_fieldsets = (
-            (None, {
-                'classes': ('wide',),
-                'fields': ( 'username', 'password1', 'password2'),
-            }),
-        )
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'password1', 'password2'),
+        }),
+    )
 
-    list_display = ('username' ,'is_staff')
+    list_display = ('username', 'is_staff')
     # list_filter = ('is_staff')
     search_fields = ('username',)
     ordering = ('username',)

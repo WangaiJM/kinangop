@@ -14,7 +14,7 @@ def student_login(request):
             password = form.cleaned_data.get('password')
 
             user = authenticate(username=username, password=password)
-            
+
             if user is not None:
                 try:
                     if user.student_profile.is_student:
@@ -27,10 +27,10 @@ def student_login(request):
             messages.error(request, "Invalid Username and/or Password")
             return redirect('student-login')
 
-
     form = AuthenticationForm()
-    context = { 'login_form' : form }
+    context = {'login_form': form}
     return render(request, 'logins/student-login.html', context)
+
 
 def staff_login(request):
     if request.method == 'POST':
@@ -41,7 +41,7 @@ def staff_login(request):
             password = form.cleaned_data.get('password')
 
             user = authenticate(username=username, password=password)
-            
+
             if user is not None:
                 try:
                     if user.trainer_profile.is_trainer:
@@ -55,11 +55,13 @@ def staff_login(request):
             return redirect('staff-login')
 
     form = AuthenticationForm()
-    context = { 'login_form' : form }
+    context = {'login_form': form}
     return render(request, 'logins/staff-login.html', context)
+
 
 def staff_dashboard(request):
     return render(request, 'accounts/staff-dashboard.html')
+
 
 def student_dashboard(request):
     return render(request, 'accounts/student-dashboard.html')
