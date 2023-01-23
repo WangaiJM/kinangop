@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import registrationForm
-from django.http import HttpResponseRedirect
+
 
 def onlineReg(request):
     if request.method == 'POST':
@@ -8,9 +8,13 @@ def onlineReg(request):
 
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('home')
-            
+            return render(request, 'online_send_success.html')
+
     else:
         form = registrationForm()
 
-    return render(request, 'admissions/online-reg.html', {'form' : form} )
+    return render(request, 'admissions/online-reg.html', {'form': form})
+
+
+def onlineRegSuccessView(request):
+    return render(request, 'online_send_success.html')
