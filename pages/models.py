@@ -1,13 +1,14 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 class about(models.Model):
     title = models.CharField(max_length=100)
     description = RichTextField()
-    
 
     def __str__(self):
         return self.title
+
 
 class statement(models.Model):
     vision = RichTextField()
@@ -19,27 +20,33 @@ class statement(models.Model):
     def __str__(self):
         return self.motto
 
+
 class principal(models.Model):
     title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     message = RichTextField()
     image = models.ImageField(upload_to='images/principal')
 
     def __str__(self):
         return self.title
 
+
 class board_of_governor(models.Model):
     title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     message = RichTextField()
     image = models.ImageField(upload_to='images/bog')
 
     class Meta:
         verbose_name_plural = 'Board of Governors'
-        
+
     def __str__(self):
         return self.title
 
+
 class dean(models.Model):
     title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     message = RichTextField()
     image = models.ImageField(upload_to='images/dean')
 
@@ -48,6 +55,53 @@ class dean(models.Model):
 
     class Meta:
         verbose_name_plural = 'Dean of Students'
+
+
+class registrar(models.Model):
+    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    message = RichTextField()
+    image = models.ImageField(upload_to='images/dean')
+
+    def __str__(self):
+        return self.title
+
+
+class guidance(models.Model):
+    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    message = RichTextField()
+    image = models.ImageField(upload_to='images/dean')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Guidance and Counselling'
+
+
+class procument(models.Model):
+    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    message = RichTextField()
+    image = models.ImageField(upload_to='images/dean')
+
+    def __str__(self):
+        return self.title
+
+
+class dprincipal(models.Model):
+    title = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    message = RichTextField()
+    image = models.ImageField(upload_to='images/dean')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Deputy Principal'
+
 
 class service_charter(models.Model):
     title = models.CharField(max_length=150)
@@ -58,6 +112,7 @@ class service_charter(models.Model):
 
     class Meta:
         verbose_name_plural = 'Service Charter'
+
 
 class gallery(models.Model):
     title = models.CharField(max_length=150)
@@ -70,6 +125,7 @@ class gallery(models.Model):
 
     class Meta:
         verbose_name_plural = 'Galleries'
+
 
 class carousel(models.Model):
     title = models.CharField(max_length=50)

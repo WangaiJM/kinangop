@@ -36,6 +36,23 @@
           <a href="">Administration</a>
           <ul class="nav-dropdown">
             <li><a href="{% url 'principal' %}">Principal</a></li>
+            <li><a href="{% url 'dprincipal' %}">Deputy Principal</a></li>
+            <li><a href="{% url 'registrar' %}">Registrar</a></li>
+            <li>
+              <a href=""> <strong>Other</strong> </a>
+              <ul class="second-nav-dropdown">
+                <li><a href="{% url 'dean' %}">Dean</a></li>
+                <li><a href="{% url 'procument' %}">Procument</a></li>
+                <li>
+                  <a href="{% url 'guidance' %}">Guidance and Counselling</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="">Governance</a>
+          <ul class="nav-dropdown">
             <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
           </ul>
         </li>
@@ -55,14 +72,14 @@
             <li><a href="{% url 'contacts' %}">Contact Us</a></li>
           </ul>
         </li>
-        <li>
+        <!-- <li>
           <a href="">Students</a>
           <ul class="nav-dropdown">
             <li><a href="{% url 'welfare' %}">Student Welfare</a></li>
-            <!-- <li><a href="{% url 'student-downloads' %}">Downloads</a></li> -->
+            <li><a href="{% url 'student-downloads' %}">Downloads</a></li>
             <li><a href="{% url 'dean' %}">Registrar</a></li>
           </ul>
-        </li>
+        </li> -->
         <li>
           <a href="">Opportunities</a>
           <ul class="nav-dropdown">
