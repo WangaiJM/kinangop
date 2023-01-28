@@ -40,25 +40,25 @@ def principalView(request):
 def dprincipalView(request):
     dprincipals = dprincipal.objects.last()
     context = {'dprincipal': dprincipals}
-    return render(request, 'administration/principal.html', context)
+    return render(request, 'administration/dprincipal.html', context)
 
 
 def registrarView(request):
     registrars = registrar.objects.last()
     context = {'registrar': registrars}
-    return render(request, 'administration/principal.html', context)
+    return render(request, 'administration/registrar.html', context)
 
 
 def guidanceView(request):
     guidances = guidance.objects.last()
     context = {'guidance': guidances}
-    return render(request, 'administration/principal.html', context)
+    return render(request, 'administration/guidance.html', context)
 
 
 def procumentView(request):
     procuments = procument.objects.last()
     context = {'procument': procuments}
-    return render(request, 'administration/principal.html', context)
+    return render(request, 'administration/procument.html', context)
 
 
 def deanView(request):
