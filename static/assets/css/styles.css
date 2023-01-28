@@ -112,8 +112,19 @@ button {
 }
 .nav-dropdown li:hover {
   background-color: var(--darkgreen);
+  
 }
-
+.second-nav-dropdown{
+  right: 100%;
+  top: 0;
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 25rem;
+  display: none;
+}
+.nav-dropdown li:last-child:hover .second-nav-dropdown{
+  display: list-item;
+}
 .main-nav li:hover .nav-dropdown {
   display: list-item;
 }
@@ -661,6 +672,17 @@ input[type="submit"]:hover {
     transform: translateX(-100%);
     right: 100%;
     top: 0;
+  }
+  .second-nav-dropdown{
+    top: 0;
+    right: 0;
+  }
+  .intake-cta{
+    right: 2rem;
+    top: auto;
+    bottom: 2rem;
+    width: 40%;
+
   }
   #hamburger {
     display: block;

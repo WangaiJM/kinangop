@@ -30,7 +30,6 @@ function nextSlide() {
 
   image = images[current];
 
-  console.log(image);
   image.classList.add("active");
 }
 
