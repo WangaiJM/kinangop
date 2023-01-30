@@ -64,7 +64,7 @@
           </div>
           <h3 class="dept-title">{{ deptmsg.title | safe }}</h3>
           <p>
-            {{ deptmsg.brief | safe }}
+            {{ deptmsg.message | safe | slice:"150"}}
           </p>
         </div>
       </a>

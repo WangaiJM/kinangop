@@ -121,7 +121,7 @@ button {
   width: 25rem;
   display: none;
 }
-.nav-dropdown li:last-child:hover .second-nav-dropdown{
+.nav-dropdown li:hover .second-nav-dropdown{
   display: list-item;
 }
 .main-nav li:hover .nav-dropdown {
@@ -408,7 +408,7 @@ footer {
 }
 .department-holder {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   row-gap: 2rem;
   column-gap: 3rem;
   padding-bottom: 3rem;
