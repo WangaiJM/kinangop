@@ -1,12 +1,15 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 
+
 class department(models.Model):
     department_name = models.CharField(max_length=150)
     department_code = models.CharField(max_length=150)
+    is_academic = models.BooleanField()
 
     def __str__(self):
         return self.department_name
+
 
 class course(models.Model):
     exam_bodies_choices = [
@@ -18,13 +21,15 @@ class course(models.Model):
     course_code = models.CharField(max_length=150)
     course_name = models.CharField(max_length=150)
     module = models.CharField(max_length=50)
-    exam_body = models.CharField(max_length=50, choices = exam_bodies_choices)
+    exam_body = models.CharField(max_length=50, choices=exam_bodies_choices)
     min_qualification = models.CharField(max_length=150)
     duration = models.CharField(max_length=50)
     intake = models.CharField(max_length=50)
 
     def __str__(self):
         return self.course_code
+
+
 class units(models.Model):
     course = models.ForeignKey(course, on_delete=models.CASCADE)
     unit_code = models.CharField(max_length=150)
@@ -36,11 +41,11 @@ class units(models.Model):
     class Meta:
         verbose_name_plural = 'Units'
 
+
 class department_message(models.Model):
     department = models.ForeignKey(department, on_delete=models.CASCADE)
     title = models.CharField(max_length=150)
     display_image = models.ImageField(upload_to='department/image', default='')
-    brief = RichTextField()
     message = RichTextField()
 
     def __str__(self):
@@ -50,6 +55,7 @@ class department_message(models.Model):
         verbose_name = "Department Message"
         verbose_name_plural = "Department Messages"
 
+
 class department_images(models.Model):
     department = models.ForeignKey(department, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='department/image')
@@ -58,7 +64,7 @@ class department_images(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         verbose_name = "Department Picture"
         verbose_name_plural = "Department Pictures"

@@ -1,0 +1,34 @@
+{% extends 'app/main.html' %} {% load static %}
+
+<div>{% block title %} Academic {% endblock %}</div>
+
+<div>
+  {% block content %}
+  <section class="container">
+    <h2 class="title-head">Academic Departments</h2>
+    <section class="dep-features">
+      <h2>Departments</h2>
+      <div class="container department-holder">
+        {% for dept in depts %} {% if dept.is_academic %}
+
+        <div class="dept-item">
+          {% for single in dept.department_message_set.all %}
+          <a href="{% url 'single-department' single.id single.department %}">
+            <div class="dept-img-holder">
+              <img
+                src="{{ single.display_image.url }}"
+                alt="{{single.title}}"
+              />
+            </div>
+            <h3 class="dept-title">{{ single.title }}</h3>
+            <p>{{ single.message | safe | slice:'100' }}</p>
+          </a>
+          {% endfor %}
+        </div>
+
+        {% endif %} {% endfor %}
+      </div>
+    </section>
+  </section>
+  {% endblock %}
+</div>

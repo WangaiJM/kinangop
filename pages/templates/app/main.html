@@ -30,14 +30,20 @@
             <li><a href="{% url 'about' %}">Brief History</a></li>
             <li><a href="{% url 'vision' %}">Vision and Mission</a></li>
             <li><a href="{% url 'service_charter' %}">Service Charter</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="">Administration</a>
-          <ul class="nav-dropdown">
-            <li><a href="{% url 'principal' %}">Principal</a></li>
-            <li><a href="{% url 'dprincipal' %}">Deputy Principal</a></li>
-            <li><a href="{% url 'registrar' %}">Registrar</a></li>
+            <li>
+              <a href="">Governance</a>
+              <ul class="second-nav-dropdown">
+                <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">Administration</a>
+              <ul class="second-nav-dropdown">
+                <li><a href="{% url 'principal' %}">Principal</a></li>
+                <li><a href="{% url 'dprincipal' %}">Deputy Principal</a></li>
+                <li><a href="{% url 'registrar' %}">Registrar</a></li>
+              </ul>
+            </li>
             <li>
               <a href=""> <strong>Other</strong> </a>
               <ul class="second-nav-dropdown">
@@ -51,9 +57,12 @@
           </ul>
         </li>
         <li>
-          <a href="">Governance</a>
+          <a href="">Departments</a>
           <ul class="nav-dropdown">
-            <li><a href="{% url 'bogs' %}">Board Of Governors</a></li>
+            <li><a href="{% url 'academic-department' %}">Academic</a></li>
+            <li>
+              <a href="{% url 'non-academic-department' %}">Non-Academic</a>
+            </li>
           </ul>
         </li>
         <li>
